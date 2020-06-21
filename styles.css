@@ -1,0 +1,256 @@
+* {
+  box-sizing: border-box;
+  font-size: 10px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* navigation bar styles */
+.navbar {
+  background: #fff;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  font-family: "Montserrat", monospace;
+}
+
+.navbar h1 {
+  font-size: 3.6rem;
+}
+
+.nav-links {
+  background: #fff;
+  position: absolute;
+  top: 100%;
+  text-align: right;
+  width: 100%;
+  left: 0;
+  right: 0;
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: transform 450ms ease-in-out;
+}
+
+.nav-links ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-links li {
+  margin-right: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.nav-links a {
+  color: black;
+  font-family: "Lato", sans-serif;
+  font-size: 1.8rem;
+  opacity: 0;
+  transition: opacity 100ms ease-in-out;
+}
+
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  display: block;
+  background: #000;
+  height: 0.3rem;
+  width: 2.8rem;
+  border-radius: 0.2rem;
+  position: relative;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  content: "";
+  position: absolute;
+}
+
+.nav-toggle-label span::before {
+  bottom: 0.7rem;
+}
+
+.nav-toggle-label span::after {
+  top: 0.7rem;
+}
+
+.nav-toggle:checked ~ .nav-links {
+  transform: scale(1, 1);
+}
+
+.nav-toggle:checked ~ .nav-links a {
+  opacity: 1;
+  transition: opacity 250ms ease-in-out 250ms;
+}
+
+/* navigation for larger screens */
+@media (min-width: 650px) {
+  .nav-toggle-label {
+    display: none;
+  }
+
+  .navbar {
+    display: flex;
+  }
+
+  .nav-links {
+    all: unset;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .nav-links ul {
+    display: flex;
+  }
+  .nav-links li {
+    margin-left: 2rem;
+    margin-bottom: 0;
+  }
+  .nav-links a {
+    opacity: 1;
+  }
+}
+/* about page styles */
+.jumbotron {
+  min-height: 90vh;
+  background-color: white;
+}
+
+.about h2 {
+  font-family: "Montserrat", monospace;
+  font-size: 4.8rem;
+}
+.about p {
+  font-family: "Lato", sans-serif;
+  font-size: 1.6rem;
+}
+.about #about-title {
+  opacity: 0.6;
+}
+
+/* experience section styles */
+ul.timeline {
+  list-style-type: none;
+  position: relative;
+  font-family: "Lato", sans-serif;
+}
+ul.timeline .timeline-title {
+  font-family: "Montserrat", monospace;
+  font-size: 2.4rem;
+}
+ul.timeline .timeline-org {
+  color: black;
+  font-family: "Montserrat", monospace;
+  opacity: 60%;
+  font-style: italic;
+  font-size: 2rem;
+  text-decoration: none;
+}
+ul.timeline ul li,
+ul.timeline .float-right {
+  font-size: 1.6rem;
+}
+ul.timeline a:hover {
+  opacity: 30%;
+  text-decoration: underline;
+}
+
+ul.timeline:before {
+  content: " ";
+  background: black;
+  display: inline-block;
+  position: absolute;
+  left: 29px;
+  width: 2px;
+  height: 100%;
+  z-index: 400;
+}
+
+ul.timeline > li {
+  margin: 20px 0;
+  padding-left: 20px;
+}
+
+ul.timeline > li:before {
+  content: " ";
+  background: white;
+  display: inline-block;
+  position: absolute;
+  border-radius: 50%;
+  border: 3px solid black;
+  left: 20px;
+  width: 20px;
+  height: 20px;
+  z-index: 400;
+}
+
+.resume-section-head {
+  font-family: "Montserrat", monospace;
+  font-weight: bold;
+  font-size: 2.8rem;
+}
+
+.short-text {
+  display: none;
+}
+
+@media (max-width: 750px) {
+  .full-text {
+    display: none;
+  }
+
+  .short-text {
+    display: inline-block;
+  }
+
+  ul.timeline .timeline-title,
+ul.timeline .timeline-org {
+    font-size: 1.8rem;
+  }
+}
+.flex-container {
+  display: flex;
+}
+
+/* projects section styles */
+.projects-container {
+  margin: 10rem auto;
+  min-height: 90vh;
+  width: 90vw;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+.projects-container h2 {
+  width: 100%;
+  font-family: "Montserrat", monospace;
+  font-size: 2.8rem;
+}
+
+.project-item {
+  margin: 1rem 0;
+  padding: 1rem;
+  height: auto;
+  width: 350px;
+  background-color: #9aa3ac;
+  flex-direction: column;
+  align-items: center;
+}
+
+.project-text {
+  padding: 0.5rem;
+  font-family: "Lato", sans-serif;
+  font-size: 1.4rem;
+}
+
+/*# sourceMappingURL=styles.css.map */
